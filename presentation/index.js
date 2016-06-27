@@ -22,6 +22,9 @@ import {
   Text
 } from "spectacle";
 
+// Import CodeSlide plugin
+import CodeSlide from 'spectacle-code-slide';
+
 // Import image preloader util
 import preloader from "spectacle/lib/utils/preloader";
 
@@ -53,9 +56,15 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Spectacle theme={theme}>
-        <Deck transition={["zoom", "slide"]} transitionDuration={500}>
+        <Deck transition={[]} transitionDuration={500} progress="bar" controls="0">
 
-          <Slide transition={["zoom"]} bgColor="primary">
+
+          {/* BLANK SLIDE */}
+          <Slide>
+          </Slide>
+
+
+          <Slide transition={["fade"]} bgColor="primary">
             <Heading size={1} fit caps lineHeight={1} textColor="black">
               Localization
             </Heading>
@@ -64,28 +73,184 @@ export default class Presentation extends React.Component {
             </Heading>
           </Slide>
 
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
+
+          {/* INTRO SLIDE */}
+          <Slide transition={["fade"]} bgColor="primary">
+            <Heading size={1} fit>
+              Translations.php
+            </Heading>
+            <Appear fid="1">
+              <Heading size={1} fit>
+                const SOME_KEY => 'snake_case_value'
+              </Heading>
+            </Appear>
             <CodePane
               lang="jsx"
-              source={require("raw!../assets/deck.example")}
+              source={require("raw!../assets/translations.php")}
               margin="20px auto"
+              textSize="16px"
+            />
+          </Slide>
+
+
+          {/* CONTROLLER TRANSLATION - BEFORE */}
+          <Slide transition={[]} bgColor="primary">
+            <Heading size={1} fit>
+              someController.php
+            </Heading>
+            <CodePane
+              lang="jsx"
+              source={require("raw!../assets/some_controller_before.php")}
+              margin="20px auto"
+              textSize="16px"
+            />
+          </Slide>
+
+
+          {/* CONTROLLER TRANSLATION - AFTER */}
+          <Slide transition={[]} bgColor="primary">
+            <Heading size={1} fit>
+              someController.php
+            </Heading>
+            <CodePane
+              lang="jsx"
+              source={require("raw!../assets/some_controller.php")}
+              margin="20px auto"
+              textSize="16px"
+            />
+          </Slide>
+
+
+          {/* CONTROLLER TRANSLATION - AFTER WITH TRANSLATIONS FILE */}
+          <Slide transition={[]} bgColor="primary">
+
+            <CodePane
+              lang="jsx"
+              source={require("raw!../assets/some_controller.php")}
+              margin="20px auto"
+              textSize="14px"
+            />
+            <CodePane
+              lang="jsx"
+              source={require("raw!../assets/translations_php.php")}
+              margin="20px auto"
+              textSize="14px"
+            />
+          </Slide>
+
+
+          {/* JS TRANSLATION - BEFORE */}
+          <Slide transition={[]} bgColor="primary">
+            <Heading size={4} textColor="#FFF">
+              aFile.js - not localized
+            </Heading>
+            <CodePane
+              lang="jsx"
+              source={require("raw!../assets/aFileBefore.js")}
+              margin="20px auto"
+              textSize="14px"
+            />
+          </Slide>
+
+
+          {/* JS TRANSLATION - AFTER */}
+          <Slide transition={[]} bgColor="primary">
+            <Heading size={4} textColor="#FFF">
+              aFile.js - localized
+            </Heading>
+            <CodePane
+              lang="jsx"
+              source={require("raw!../assets/aFileAfter.js")}
+              margin="20px auto"
+              textSize="14px"
+            />
+
+          </Slide>
+
+
+          {/* JS TRANSLATION - AFTER WITH TRANSLATIONS FILE */}
+          <Slide transition={[]} bgColor="primary">
+            <Heading size={4} textColor="#FFF">
+              aFile.js - localized
+            </Heading>
+            <CodePane
+              lang="jsx"
+              source={require("raw!../assets/aFileAfter.js")}
+              margin="20px auto"
+              textSize="14px"
+            />
+            <Heading size={4} textColor="#FFF">
+              Translations.php
+            </Heading>
+            <CodePane
+              lang="jsx"
+              source={require("raw!../assets/translations_js.php")}
+              margin="20px auto"
+              textSize="14px"
+            />
+          </Slide>
+
+
+          {/* MUSTACHE TRANSLATION - BEFORE */}
+          <Slide transition={[]} bgColor="primary">
+            <Heading size={4} textColor="#FFF">
+              aFile.mustache - not localized
+            </Heading>
+            <CodePane
+              lang="jsx"
+              source={require("raw!../assets/aFileBefore.mustache")}
+              margin="20px auto"
+              textSize="14px"
+            />
+          </Slide>
+
+
+          {/* MUSTACHE TRANSLATION - AFTER */}
+          <Slide transition={[]} bgColor="primary">
+            <Heading size={4} textColor="#FFF">
+              aFile.mustache - localized
+            </Heading>
+            <CodePane
+              lang="jsx"
+              source={require("raw!../assets/aFileAfter.mustache")}
+              margin="20px auto"
+              textSize="14px"
+            />
+          </Slide>
+
+          {/* MUSTACHE TRANSLATION - AFTER - WITH TRANSLATIONS FILE */}
+          <Slide transition={[]} bgColor="primary">
+            <Heading size={4} textColor="#FFF">
+              aFile.mustache - localized
+            </Heading>
+            <CodePane
+              lang="jsx"
+              source={require("raw!../assets/aFileAfter.mustache")}
+              margin="20px auto"
+              textSize="14px"
+            />
+            <CodePane
+              lang="jsx"
+              source={require("raw!../assets/translations_mustache.php")}
+              margin="20px auto"
+              textSize="14px"
             />
           </Slide>
 
           <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
             <Appear fid="1">
               <Heading size={1} caps fit textColor="primary">
-                Full Width
+                Help me, Zoo!!!
               </Heading>
             </Appear>
             <Appear fid="2">
               <Heading size={1} caps fit textColor="tertiary">
-                Adjustable Darkness
+                Seriously
               </Heading>
             </Appear>
             <Appear fid="3">
               <Heading size={1} caps fit textColor="primary">
-                Background Imagery
+                Why???
               </Heading>
             </Appear>
           </Slide>
@@ -112,6 +277,7 @@ export default class Presentation extends React.Component {
               <Cite>Ken Wheeler</Cite>
             </BlockQuote>
           </Slide>
+
           <Slide transition={["spin", "zoom"]} bgColor="tertiary">
             <Heading caps fit size={1} textColor="primary">
               Inline Markdown
