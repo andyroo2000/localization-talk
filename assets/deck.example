@@ -2,7 +2,7 @@ return (
   <Deck transition={['zoom','slide']} transitionDuration={800}>
     <Slide bgColor="primary">
       <Heading size={1} fit caps>
-        React Presentations
+        Some code
       </Heading>
       <Heading size={2} fit caps>
         Written In React
