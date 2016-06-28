@@ -40,7 +40,8 @@ require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
-  alf: require("../assets/alf.jpg")
+  alf: require("../assets/alf.jpg"),
+  harvestCron: require("../assets/the_harvest_chron.jpg")
 };
 
 preloader(images);
@@ -253,13 +254,7 @@ export default class Presentation extends React.Component {
 
 
           {/* THE HARVEST CHRON */}
-          <Slide transition={["fade"]} bgColor="primary">
-            <Heading caps fit size={1} textColor="tertiary">
-              The Harvest
-            </Heading>
-            <Heading caps fit size={1} textColor="secondary">
-              CHRON
-            </Heading>
+          <Slide transition={["fade"]} bgImage={images.harvestCron.replace("/", "")}>
           </Slide>
           <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
             <List>
