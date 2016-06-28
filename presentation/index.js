@@ -237,96 +237,62 @@ export default class Presentation extends React.Component {
             />
           </Slide>
 
-          <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
-            <Appear fid="1">
-              <Heading size={1} caps fit textColor="primary">
-                Help me, Zoo!!!
-              </Heading>
-            </Appear>
-            <Appear fid="2">
-              <Heading size={1} caps fit textColor="tertiary">
-                Seriously
-              </Heading>
-            </Appear>
-            <Appear fid="3">
-              <Heading size={1} caps fit textColor="primary">
-                Why???
-              </Heading>
-            </Appear>
-          </Slide>
-
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Heading caps fit>Flexible Layouts</Heading>
-            <Layout>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Left
-                </Heading>
-              </Fill>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Right
-                </Heading>
-              </Fill>
-            </Layout>
-          </Slide>
-
-          <Slide transition={["slide"]} bgColor="black">
-            <BlockQuote>
-              <Quote>Wonderfully formatted quotes</Quote>
-              <Cite>Ken Wheeler</Cite>
-            </BlockQuote>
-          </Slide>
-
-          <Slide transition={["spin", "zoom"]} bgColor="tertiary">
-            <Heading caps fit size={1} textColor="primary">
-              Inline Markdown
-            </Heading>
-            <Markdown>
-              {`
-![Markdown Logo](${images.markdown.replace("/", "")})
-
-You can write inline images, [Markdown Links](http://commonmark.org), paragraph text and most other markdown syntax
-* Lists too!
-* With ~~strikethrough~~ and _italic_
-* And lets not forget **bold**
-              `}
-            </Markdown>
-          </Slide>
-
+          {/* ALF */}
           <Slide transition={["slide", "spin"]} bgColor="primary">
             <Heading caps fit size={1} textColor="tertiary">
-              Smooth
+              ALF
             </Heading>
             <Heading caps fit size={1} textColor="secondary">
-              Combinable Transitions
+              Adobe Language Framework
+            </Heading>
+          </Slide>
+          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+            <List>
+              <Appear><ListItem>We just have to specify what to translate and they do it</ListItem></Appear>
+            </List>
+          </Slide>
+
+
+          {/* THE HARVEST CHRON */}
+          <Slide transition={["slide", "spin"]} bgColor="primary">
+            <Heading caps fit size={1} textColor="tertiary">
+              The Harvest
+            </Heading>
+            <Heading caps fit size={1} textColor="secondary">
+              CHRON
+            </Heading>
+          </Slide>
+          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+            <List>
+              <Appear><ListItem>runs multiple times a day</ListItem></Appear>
+              <Appear><ListItem>checks for new uses of the translation function</ListItem></Appear>
+              <Appear><ListItem>checks for diffs in text to translate</ListItem></Appear>
+              <Appear><ListItem>After translations are made, ALF submits a PR with the new translations</ListItem></Appear>
+            </List>
+          </Slide>
+
+
+          {/* GENERAL LOCALIZATION TIPS */}
+          <Slide transition={["slide", "spin"]} bgColor="primary">
+            <Heading caps fit size={1} textColor="tertiary">
+              General
+            </Heading>
+            <Heading caps fit size={1} textColor="secondary">
+              Localization Tips
             </Heading>
           </Slide>
 
           <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
             <List>
-              <Appear><ListItem>Inline style based theme system</ListItem></Appear>
-              <Appear><ListItem>Autofit text</ListItem></Appear>
-              <Appear><ListItem>Flexbox layout system</ListItem></Appear>
-              <Appear><ListItem>React-Router navigation</ListItem></Appear>
-              <Appear><ListItem>PDF export</ListItem></Appear>
-              <Appear><ListItem>And...</ListItem></Appear>
+              <Appear><ListItem>Translate any text that might be displayed to the user</ListItem></Appear>
+              <Appear><ListItem>Don't concatenate strings</ListItem></Appear>
+              <Appear><ListItem>Don't put punctuation outside of the translation</ListItem></Appear>
+              <Appear><ListItem>Keep as much of a sentence or phrase inside the translation as possible</ListItem></Appear>
+              <Appear><ListItem>Design text areas with room to expand for longer translations</ListItem></Appear>
+              <Appear><ListItem>Don't hard-code date or time formats - use generic formats in moment.js</ListItem></Appear>
             </List>
           </Slide>
 
-          <Slide transition={["slide"]} bgColor="primary">
-            <Heading size={1} caps fit textColor="tertiary">
-              Your presentations are interactive
-            </Heading>
-            <Interactive/>
-          </Slide>
-
-          <Slide transition={["spin", "slide"]} bgColor="tertiary">
-            <Heading size={1} caps fit lineHeight={1.5} textColor="primary">
-              Made with love in Seattle by
-            </Heading>
-            <Link href="http://www.formidablelabs.com"><Image width="100%" src={images.logo}/></Link>
-          </Slide>
 
         </Deck>
       </Spectacle>
