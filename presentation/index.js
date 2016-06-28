@@ -40,10 +40,7 @@ require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
-  city: require("../assets/city.jpg"),
-  kat: require("../assets/kat.png"),
-  logo: require("../assets/formidable-logo.svg"),
-  markdown: require("../assets/markdown.png")
+  alf: require("../assets/alf.jpg")
 };
 
 preloader(images);
@@ -238,15 +235,15 @@ export default class Presentation extends React.Component {
           </Slide>
 
           {/* ALF */}
-          <Slide transition={["slide", "spin"]} bgColor="primary">
+          <Slide transition={["fade"]} bgImage={images.alf.replace("/", "")} bgDarken={0.25}>
             <Heading caps fit size={1} textColor="tertiary">
               ALF
             </Heading>
-            <Heading caps fit size={1} textColor="secondary">
+            <Heading caps fit size={1} textColor="tertiary">
               Adobe Language Framework
             </Heading>
           </Slide>
-          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Slide transition={[]} bgImage={images.alf.replace("/", "")} bgDarken={0.50} textColor="tertiary">
             <List>
               <Appear><ListItem>We specify what to translate</ListItem></Appear>
               <Appear><ListItem>People on the ALF team do it for us</ListItem></Appear>
@@ -256,7 +253,7 @@ export default class Presentation extends React.Component {
 
 
           {/* THE HARVEST CHRON */}
-          <Slide transition={["slide", "spin"]} bgColor="primary">
+          <Slide transition={["fade"]} bgColor="primary">
             <Heading caps fit size={1} textColor="tertiary">
               The Harvest
             </Heading>
