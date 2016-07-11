@@ -41,7 +41,7 @@ require("spectacle/lib/themes/default/index.css");
 
 const images = {
   alf: require("../assets/alf.jpg"),
-  harvestCron: require("../assets/the_harvest_chron.jpg")
+  harvestCron: require("../assets/the_harvest_cron.jpg")
 };
 
 preloader(images);
@@ -256,7 +256,7 @@ export default class Presentation extends React.Component {
           {/* THE HARVEST CHRON */}
           <Slide transition={["fade"]} bgImage={images.harvestCron.replace("/", "")}>
           </Slide>
-          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Slide transition={["fade"]} bgImage={images.harvestCron.replace("/", "")} bgDarken={0.75} textColor="primary">
             <List>
               <Appear><ListItem>runs multiple times a day</ListItem></Appear>
               <Appear><ListItem>checks for new uses of the translation function</ListItem></Appear>
