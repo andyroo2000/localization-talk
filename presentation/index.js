@@ -44,11 +44,7 @@ const images = {
   aBillionUsersTeaser: require("../assets/aBillionUsersTeaser.jpg"),
   aBillionUsers: require("../assets/aBillionUsers.jpg"),
   alf: require("../assets/alf.jpg"),
-<<<<<<< Updated upstream
-  harvestCron: require("../assets/the_harvest_chron.jpg")
-=======
-  harvestCron: require("../assets/the_harvest_cron.jpg"),
->>>>>>> Stashed changes
+  harvestCron: require("../assets/theHarvestCron.jpg"),
 };
 
 preloader(images);
@@ -76,7 +72,7 @@ export default class Presentation extends React.Component {
               Localization
             </Heading>
             <Heading size={1} fit caps>
-              How and why to write code that works in more than one language
+              How to write code that works in more than one language
             </Heading>
           </Slide>
 
@@ -305,11 +301,7 @@ export default class Presentation extends React.Component {
           {/* THE HARVEST CHRON */}
           <Slide transition={["fade"]} bgImage={images.harvestCron.replace("/", "")}>
           </Slide>
-<<<<<<< Updated upstream
-          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-=======
           <Slide transition={["fade"]} bgImage={images.harvestCron.replace("/", "")} bgDarken={0.75} textColor="tertiary">
->>>>>>> Stashed changes
             <List>
               <Appear><ListItem>runs multiple times a day</ListItem></Appear>
               <Appear><ListItem>checks for new uses of the translation function</ListItem></Appear>
