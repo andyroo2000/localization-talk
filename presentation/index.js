@@ -40,8 +40,15 @@ require("spectacle/lib/themes/default/index.css");
 
 
 const images = {
+  worldMap: require("../assets/worldMap.jpg"),
+  aBillionUsersTeaser: require("../assets/aBillionUsersTeaser.jpg"),
+  aBillionUsers: require("../assets/aBillionUsers.jpg"),
   alf: require("../assets/alf.jpg"),
+<<<<<<< Updated upstream
   harvestCron: require("../assets/the_harvest_chron.jpg")
+=======
+  harvestCron: require("../assets/the_harvest_cron.jpg"),
+>>>>>>> Stashed changes
 };
 
 preloader(images);
@@ -62,17 +69,58 @@ export default class Presentation extends React.Component {
           </Slide>
 
 
+
+          {/* INTRO SLIDE */}
           <Slide transition={["fade"]} bgColor="primary">
             <Heading size={1} fit caps lineHeight={1} textColor="black">
               Localization
             </Heading>
             <Heading size={1} fit caps>
-              How to write code that works in more than one language
+              How and why to write code that works in more than one language
             </Heading>
           </Slide>
 
 
-          {/* INTRO SLIDE */}
+          {/* WHAT HAPPENS IF WE IGNORE LOCALIZATION */}
+          <Slide transition={["fade"]} bgImage={images.worldMap.replace("/", "")}>
+          </Slide>
+          <Slide transition={["fade"]} bgImage={images.worldMap.replace("/", "")} bgDarken={0.75} textColor="tertiary">
+            <Appear fid="1">
+              <Heading size={1} fit>
+                What happens if we don't worry about localization?
+              </Heading>
+            </Appear>
+            <List>
+              <Appear><ListItem>Unlocalized text makes non-English speakers feel unwelcome</ListItem></Appear>
+              <Appear><ListItem>Users speaking languages other than English feel that the site is not for them</ListItem></Appear>
+              <Appear><ListItem>How would you feel if you were visiting Ikea.com and you received validation error messages in Swedish?</ListItem></Appear>
+            </List>
+          </Slide>
+
+
+
+          {/* A BILLION USERS MEME */}
+          <Slide transition={[]} bgImage={images.aBillionUsersTeaser.replace("/", "")}>
+          </Slide>
+          <Slide transition={[]} bgImage={images.aBillionUsers.replace("/", "")}>
+          </Slide>
+
+
+          {/* WHY LOCALIZE? */}
+          <Slide transition={[]} bgImage={images.worldMap.replace("/", "")} bgDarken={0.75} textColor="tertiary">
+            <Heading size={1} fit>
+              Benefits of thorough localization
+            </Heading>
+            <List>
+              <Appear><ListItem>~50% of our traffic is from non-English locales</ListItem></Appear>
+              <Appear><ListItem>There are more non-English speaking potential users than English speaking ones</ListItem></Appear>
+              <Appear><ListItem>This is a tremendous opportunity for growth - duh</ListItem></Appear>
+            </List>
+          </Slide>
+
+
+
+          {/* TRANSLATIONS FILE - KEYS AND VALUES */}
           <Slide transition={["fade"]} bgColor="primary">
             <Heading size={1} fit>
               Translations.php
@@ -89,6 +137,7 @@ export default class Presentation extends React.Component {
               textSize="16px"
             />
           </Slide>
+
 
 
           {/* CONTROLLER TRANSLATION - BEFORE */}
@@ -256,7 +305,11 @@ export default class Presentation extends React.Component {
           {/* THE HARVEST CHRON */}
           <Slide transition={["fade"]} bgImage={images.harvestCron.replace("/", "")}>
           </Slide>
+<<<<<<< Updated upstream
           <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+=======
+          <Slide transition={["fade"]} bgImage={images.harvestCron.replace("/", "")} bgDarken={0.75} textColor="tertiary">
+>>>>>>> Stashed changes
             <List>
               <Appear><ListItem>runs multiple times a day</ListItem></Appear>
               <Appear><ListItem>checks for new uses of the translation function</ListItem></Appear>
@@ -276,7 +329,7 @@ export default class Presentation extends React.Component {
             </Heading>
           </Slide>
 
-          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <Slide transition={["fade"]} bgColor="secondary" textColor="tertiary">
             <List>
               <Appear><ListItem>Translate any text that might be displayed to the user</ListItem></Appear>
               <Appear><ListItem>Don't concatenate strings</ListItem></Appear>
