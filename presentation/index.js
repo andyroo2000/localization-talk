@@ -502,6 +502,15 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
 
+          <Slide transition={[]} bgImage={images.moment.replace("/", "")} bgDarken={0.85}>
+            <CodePane
+              lang="jsx"
+              source={require("raw!../assets/momentExample.js")}
+              margin="20px auto"
+              textSize="16px"
+            />
+          </Slide>
+
 
 
           {/* DANGER!!! THINGS TO LOOK OUT FOR */}
